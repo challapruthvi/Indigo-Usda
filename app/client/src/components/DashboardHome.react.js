@@ -1,10 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from "react";
 import {Container, Row, Col} from "react-bootstrap";
-import {Bar, BarChart, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Label} from 'recharts';
-
-//import {totalHarvest} from './server/cropsController';
-import { generateUrl } from './utility';
+import {Bar, BarChart, XAxis, YAxis, Tooltip, Legend, Label} from 'recharts';
 
 export default class DashboardHome extends Component {
     constructor(props) {
@@ -59,7 +56,7 @@ export default class DashboardHome extends Component {
         const {harvestError, harvestResult, yieldError, yieldResult} = this.state;
         return ( 
             <>
-                {harvestError || yieldError &&
+                {(harvestError || yieldError) &&
                         <Row>{harvestError}{yieldError}</Row>}
                 <Container fluid>
                     <Row className="dashboardHeader">

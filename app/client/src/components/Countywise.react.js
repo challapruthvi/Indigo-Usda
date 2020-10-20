@@ -2,12 +2,10 @@ import PropTypes from 'prop-types';
 import React, { Component } from "react";
 import _ from 'lodash';
 import {Container, Row, Col, DropdownButton, Dropdown} from "react-bootstrap";
-import {Bar, ComposedChart, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Label, XAxisProps} from 'recharts';
-import {generateUrl, getStateList} from './utility';
+import {Bar, ComposedChart, XAxis, YAxis, Tooltip, Legend} from 'recharts';
+import {generateUrl, getStateList} from '../utility';
 
 import {withRouter} from 'react-router';
-//import {totalHarvest} from './server/cropsController';
-
 
 class Countywise extends Component {
     constructor(props) {

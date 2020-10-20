@@ -2,10 +2,10 @@ import React from 'react';
 import {Router, Route, IndexRedirect, browserHistory} from 'react-router';
 
 import Main from './Main.react.js';
-import DashboardHome from './DashboardHome.react.js';
-import UsStates from './UsStates.react.js';
-import CountyWise from './Countywise.react.js';
-import CropPerCounty from './CropPerCounty.react.js';
+import DashboardHome from './components/DashboardHome.react.js';
+import UsStates from './components/UsStates.react.js';
+import CountyWise from './components/Countywise.react.js';
+import CropPerCounty from './components/CropPerCounty.react.js';
 
 export default (
     <Router key={Math.random()} history={browserHistory}>

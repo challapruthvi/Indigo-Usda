@@ -1,11 +1,10 @@
 import PropTypes from 'prop-types';
 import React, { Component } from "react";
 import _ from 'lodash';
-import {Container, Row, Col, Dropdown, DropdownButton, ButtonGroup, ToggleButton} from "react-bootstrap";
-import {ComposedChart, Bar, BarChart, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Label} from 'recharts';
+import {Container, Row, Col, Dropdown, DropdownButton} from "react-bootstrap";
+import {ComposedChart, Bar, XAxis, YAxis, Tooltip, Legend} from 'recharts';
 import {withRouter} from "react-router";
-import Countywise from './Countywise.react';
-import { generateUrl } from './utility';
+import { generateUrl } from '../utility';
 
 class UsStates extends Component {
     constructor(props) {
@@ -95,7 +94,7 @@ class UsStates extends Component {
         const {harvest, harvestError, avgYield, avgYieldError, defaultYr, crops} = this.state;
         return ( 
             <>
-                {harvestError || avgYieldError && <Row>{harvestError}{avgYieldError}</Row>}
+                {(harvestError || avgYieldError) && <Row>{harvestError}{avgYieldError}</Row>}
                 <Container fluid>
                     <Row>
                         <Col md={8} className="statesHeader">

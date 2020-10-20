@@ -2,10 +2,9 @@ import PropTypes from 'prop-types';
 import React, { Component } from "react";
 import {Container, Row, Col} from "react-bootstrap";
 import { withRouter } from 'react-router';
-import {Bar, BarChart, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Label} from 'recharts';
+import {Bar, BarChart, XAxis, YAxis, Tooltip, Legend, Label} from 'recharts';
 import _ from 'lodash';
-//import {totalHarvest} from './server/cropsController';
-import { generateUrl } from './utility';
+import { generateUrl } from '../utility';
 
 class CropPerCounty extends Component {
     constructor(props) {

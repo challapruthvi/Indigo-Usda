@@ -1,7 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import ReactDOM from 'react-dom';
 import {Navbar, Nav} from 'react-bootstrap';
 import routes from './routes.js';
 
