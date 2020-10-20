@@ -1,0 +1,46 @@
+1. Endpoint:  /get_total_harvest_per_year
+The data set has 5 years of data.
+Params: No params are passed for this endpoint
+Output: Expected format could be a map i.e., {2014: total_harvest, 2015:    total_harvest }
+Example: http://localhost:3000/get_total_harvest_per_year
+
+// get_total_yield_per_year
+
+2. Endpoint: /get_avg_total_yield_per_year
+Params: Year is passed as a parameter
+Output: Number (which indicates the avg yield for that year)
+Example: http://localhost:3000/get_avg_total_yield_per_year?year=2016
+
+3. Endpoint: /get_harvest_for_all_states (Based on the year passed as param)
+Params: Year is passed as a parameter and crop is an optional parameter
+        The crop could be either one or many (checkboxes in the UI)
+Output: {AL: total_harvest_in_this_state, ......} 
+Example: http://localhost:3000/get_harvest_for_all_states?year=2014&crop=SOYBEANS,CORN
+
+4. Endpoint:  /get_avg_yield_for_all_states 
+    (Based on the year passed as param)
+Params: Year is passed as a parameter and crop is an optional parameter
+        The crop could be either one or many (checkboxes in the UI)
+Output: {AL: avg_yield_in_this_state, .....}
+Example: http://localhost:3000/get_avg_yield_for_all_states?year=2014&crop=SOYBEANS,CORN
+
+5. Endpoint: /get_harvest_for_all_counties_in_state
+Params: State, Year are passed as parameters
+Output: {countyName: Harvest_number, .....}
+Example: http://localhost:3000/get_harvest_for_all_counties_in_state?year=2014&state=AL
+Comments: Group by crops?
+
+6. Endpoint: /get_yield_for_all_counties_in_state
+Params: State, Year are passed as parameters
+Output: {countyName: Yield_number, .....}
+Comments: Group by crops?
+
+7.  Endpoint: /get_individual_crops_harvest_per_county
+Params: county, state, year
+Output: {corn: harvest_number, soyabeans: harvest_number, ....}
+Example: http://localhost:3000/get_individual_crops_harvest_per_county?year=2017&state=AL&county=SHELBY
+
+8.  Endpoint: /get_individual_crops_avg_yield_per_county
+Params: county, state, year
+Output: {corn: avg_yield_number, soyabeans: avg_yield_number, ......}
+Example: http://localhost:3000/get_individual_crops_avg_yield_per_county?year=2016&state=AL&county=SHELBY

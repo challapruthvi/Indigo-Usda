@@ -1,0 +1,23 @@
+{
+  "name": "usda",
+  "version": "1.0.0",
+  "description": "Case Study - Spring 2020",
+  "main": "server.js",
+  "scripts": {
+    "client": "cd app/client && yarn start",
+    "server": "nodemon server.js",
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "challpruthvi",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "csvtojson": "^2.0.10",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "concurrently": "^4.0.1"
+  }
+}
