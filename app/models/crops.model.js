@@ -5,7 +5,6 @@ class Crop {
   constructor() {}
 }
 
-// 1
 Crop.totalHarvestPerYear = result => {
   sql.query("SELECT year, SUM(total_harvested_acres) total_harvested_acres FROM usda_crops_data GROUP BY year ORDER BY year ASC", (err, res) => {
     if (err) {
@@ -32,7 +31,6 @@ Crop.totalYieldForAllYears = (result) => {
   });
 };
 
-//2 
 Crop.avgYieldPerYear = (year, result) => {
   sql.query(`SELECT AVG(total_yield) AS total_yield FROM usda_crops_data where year = ${year}`, (err, res) => {
     if (err) {
@@ -52,7 +50,6 @@ Crop.avgYieldPerYear = (year, result) => {
   });
 };
 
-//3
 Crop.harvestAllStates = (year, crop, result) => {
   var query = `SELECT ufcl.state_code, SUM(ucd.total_harvested_acres) total_harvested_acres FROM usda_crops_data ucd, usda_crops uc, usda_fips_code_location ufcl 
   where ucd.crop_id = uc.crop_id and ucd.fips_code = ufcl.fips_code and ucd.year = ${year} `;
@@ -79,7 +76,6 @@ Crop.harvestAllStates = (year, crop, result) => {
   });
 };
 
-//4
 Crop.yieldAllStates = (year, crop, result) => {
   var query = `SELECT ufcl.state_code, AVG(ucd.total_yield) total_yield FROM usda_crops_data ucd, usda_crops uc, usda_fips_code_location ufcl 
   where ucd.crop_id = uc.crop_id and ucd.fips_code = ufcl.fips_code and ucd.year = ${year} `;
@@ -106,7 +102,6 @@ Crop.yieldAllStates = (year, crop, result) => {
   });
 };
 
-//5
 Crop.harvestAllCounties = (year, state, result) => {
   var query = `SELECT ucd.fips_code, ufcl.county_name, ucd.total_harvested_acres FROM usda_crops_data ucd, usda_fips_code_location ufcl 
   where ucd.fips_code = ufcl.fips_code and ucd.year = ${year} and ufcl.state_code = '${state}'  
@@ -129,7 +124,6 @@ Crop.harvestAllCounties = (year, state, result) => {
   });
 };
 
-//7
 Crop.cropsHarvestPerCounty = (year, state, county, result) => {
   var query = `SELECT uc.crop, ucd.total_harvested_acres FROM usda_crops_data ucd, usda_crops uc, usda_fips_code_location ufcl 
   where ucd.crop_id = uc.crop_id and ucd.fips_code = ufcl.fips_code and ucd.year = ${year} and ufcl.state_code = '${state}' and  ufcl.county_name = '${county}'
@@ -152,7 +146,6 @@ Crop.cropsHarvestPerCounty = (year, state, county, result) => {
   });
 };
 
-//8
 Crop.cropsYieldPerCounty = (year, state, county, result) => {
   var query = `SELECT uc.crop, ucd.total_yield FROM usda_crops_data ucd, usda_crops uc, usda_fips_code_location ufcl 
   where ucd.crop_id = uc.crop_id and ucd.fips_code = ufcl.fips_code and ucd.year = ${year} and ufcl.state_code = '${state}' and  ufcl.county_name = '${county}'

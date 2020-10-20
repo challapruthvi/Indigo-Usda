@@ -1,6 +1,5 @@
 const Crop = require("../models/crops.model.js");
 
-// 1
 exports.totalHarvestPerYear = (req, res) => {
   Crop.totalHarvestPerYear((err, data) => {
     if (err)
@@ -23,7 +22,7 @@ exports.totalYieldForAllYears = (req, res) => {
   });
 };
 
-// 2
+
 exports.avgYieldPerYear = (req, res) => {
   Crop.avgYieldPerYear(req.query.year, (err, data) => {
     if (err) {
@@ -40,7 +39,6 @@ exports.avgYieldPerYear = (req, res) => {
   });
 };
 
-// 3
 exports.harvestAllStates = (req, res) => {
   Crop.harvestAllStates(req.query.year, req.query.crop, (err, data) => {
     if (err) {
@@ -57,7 +55,6 @@ exports.harvestAllStates = (req, res) => {
   });
 };
 
-// 4
 exports.yieldAllStates = (req, res) => {
   Crop.yieldAllStates(req.query.year, req.query.crop, (err, data) => {
     if (err) {
@@ -74,7 +71,6 @@ exports.yieldAllStates = (req, res) => {
   });
 };
 
-// 5
 exports.harvestAllCounties = (req, res) => {
   Crop.harvestAllCounties(req.query.year, req.query.state, (err, data) => {
     if (err) {
@@ -91,7 +87,6 @@ exports.harvestAllCounties = (req, res) => {
   });
 };
 
-// 7
 exports.cropsHarvestPerCounty = (req, res) => {
   Crop.cropsHarvestPerCounty(req.query.year, req.query.state, req.query.county,  (err, data) => {
     if (err) {
@@ -108,7 +103,6 @@ exports.cropsHarvestPerCounty = (req, res) => {
   });
 };
 
-// 8
 exports.cropsYieldPerCounty = (req, res) => {
   Crop.cropsYieldPerCounty(req.query.year, req.query.state, req.query.county,  (err, data) => {
     if (err) {
