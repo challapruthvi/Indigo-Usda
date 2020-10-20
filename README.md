@@ -1,4 +1,4 @@
-# usda
+# Indigo Case Study - Usda
 
 1. Install MySQL server and create schema/database 'usda'; update config/db.config.js
 2. Install modules:
